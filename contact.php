@@ -12,7 +12,7 @@
     <div class="container">
         <?php require_once(__DIR__ . '/header.php'); ?>
         <h1>Contactez nous</h1>
-        <form>
+        <form action="submit_contact.php" method="POST">
             <div>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" aria-describedby="email-help">
