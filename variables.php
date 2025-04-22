@@ -3,17 +3,17 @@ $users = [
     [
         'full_name' => 'Lisa J',
         'email' => 'lisa.j@exemple.com',
-        'age' => 34,
+        'password' => '123',
     ],
     [
         'full_name' => 'Ludo C',
         'email' => 'ludo.c@exemple.com',
-        'age' => 34,
+        'password' => '123',
     ],
     [
         'full_name' => 'Laurène Castor',
         'email' => 'laurene.castor@exemple.com',
-        'age' => 28,
+        'password' => '123',
     ],
 ];
 

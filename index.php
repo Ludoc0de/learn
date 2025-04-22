@@ -13,6 +13,7 @@ require_once(__DIR__ . '/functions.php');
 
 <body>
     <?php require_once(__DIR__ .'/header.php'); ?>
+    <?php require_once(__DIR__ .'/login.php'); ?>
     <div>
         <h1>Ici on s'initie à la Cyber!</h1>
         <?php foreach(getVideos($videos) as $video){ ?>
