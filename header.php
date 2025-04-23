@@ -13,6 +13,11 @@
                 <li>
                     <a href="contact.php">Contact</a>
                 </li>
+                <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
+                <li>
+                    <a href="logout.php">Déconnecté</a>
+                </li>
+                <?php } ?>
             </ul>
         </div>
     </div>
