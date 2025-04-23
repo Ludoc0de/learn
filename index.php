@@ -1,7 +1,9 @@
 <?php
+session_start();
 require_once(__DIR__ . '/variables.php');
 require_once(__DIR__ . '/functions.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +15,10 @@ require_once(__DIR__ . '/functions.php');
 </head>
 
 <body>
+    <!-- Header -->
     <?php require_once(__DIR__ . '/header.php'); ?>
+    <!-- Formulaire de connexion -->
     <?php require_once(__DIR__ . '/login.php'); ?>
-    <?php if (isset($authenticatedUser)) { ?>
     <div>
         <h1>Ici on s'initie à la Cyber!</h1>
         <?php foreach (getVideos($videos) as $video) { ?>
@@ -29,7 +32,7 @@ require_once(__DIR__ . '/functions.php');
         <i> by <?php echo getAuthors($video['author'], $users); ?></i>
         <?php } ?>
     </div>
-    <?php } ?>
+    <!-- Footer -->
     <?php require_once(__DIR__ . '/footer.php'); ?>
 </body>
 

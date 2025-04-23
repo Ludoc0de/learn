@@ -1,4 +1,10 @@
 <?php
+function redirectToUrl(string $url): never
+{
+    header("Location: {$url}");
+    exit();
+}
+
 function isValidVideo(array $video): bool
 {
 
@@ -31,14 +37,4 @@ function getAuthors(string $authorEmail, array $users): string
             return $user['full_name'];
         }
     }
-}
-
-function authenticatedUser(string $email, string $password, array $users): bool
-{
-    foreach ($users as $user) {
-        if (($user['email'] === $email) && ($user['password'] === $password)) {
-            return true;
-        }
-    }
-    return false;
 }
