@@ -15,7 +15,7 @@ if (
             $user['password'] === $postData['password']
         ) {
             $authenticatedUser = [
-                'email' => $user['email'],
+                'full_name' => $user['full_name'],
             ];
         }
     }
@@ -47,7 +47,7 @@ if (
 <?php } else { ?>
 <div>
     <h3>
-        Bienvennue <?php echo $authenticatedUser['email']; ?> sur le site!
+        Bienvennue <?php echo $authenticatedUser['full_name']; ?> sur le site!
     </h3>
 </div>
 <?php }; ?>
