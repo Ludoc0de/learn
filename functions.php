@@ -5,11 +5,11 @@ function redirectToUrl(string $url): never
     exit();
 }
 
-function isValidVideo(array $video): bool
+function isValidTutorial(array $tutorial): bool
 {
 
-    if (array_key_exists("is_enabled", $video)) {
-        $isAvailable = $video["is_enabled"];
+    if (array_key_exists("is_enabled", $tutorial)) {
+        $isAvailable = $tutorial["is_enabled"];
     } else {
         $isAvailable = false;
     }
@@ -18,16 +18,16 @@ function isValidVideo(array $video): bool
 }
 
 
-function getVideos(array $videos): array
+function getTutorials(array $tutorials): array
 {
-    $availableVideos = [];
-    foreach ($videos as $video) {
-        if (isValidVideo($video)) {
-            $availableVideos[] = $video;
+    $availableTutorials = [];
+    foreach ($tutorials as $tutorial) {
+        if (isValidTutorial($tutorial)) {
+            $availableTutorials[] = $tutorial;
         }
     }
 
-    return $availableVideos;
+    return $availableTutorials;
 }
 
 function getAuthors(string $authorEmail, array $users): string

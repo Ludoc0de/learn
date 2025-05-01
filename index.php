@@ -21,15 +21,15 @@ require_once(__DIR__ . '/functions.php');
     <?php require_once(__DIR__ . '/login.php'); ?>
     <div>
         <h1>Ici on s'initie à la Cyber!</h1>
-        <?php foreach (getVideos($videos) as $video) { ?>
+        <?php foreach (getTutorials($tutorials) as $tutorial) { ?>
         <h5>
-            <?php echo $video['title']; ?>
+            <?php echo $tutorial['title']; ?>
         </h5>
         <a>
-            <?php echo $video['link']; ?>
+            <?php echo $tutorial['link']; ?>
         </a>
         </br>
-        <i> by <?php echo getAuthors($video['author'], $users); ?></i>
+        <i> by <?php echo getAuthors($tutorial['author'], $users); ?></i>
         <?php } ?>
     </div>
     <!-- Footer -->
