@@ -24,10 +24,6 @@ session_start();
                 <label for="link">liens de la video</label>
                 <input type="text" id="link" name="link">
             </div>
-            <!-- <div>
-                <label for="author">Auteur</label>
-                <input type="text" id="author" name="author" value=<?php echo $_SESSION["LOGGED_USER"]["email"]; ?>>
-            </div> -->
             <div>
                 <label for="is_enabled">Rendre visible</label>
                 <input type="checkbox" name="is_enabled" value="activé">
