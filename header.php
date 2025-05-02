@@ -10,6 +10,12 @@
                 <li>
                     <a href="index.php">Accueil</a>
                 </li>
+                <!-- add a condition only for admin acces  -->
+                <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
+                <li>
+                    <a href="create_tutorial.php">Creation de tutoriel</a>
+                </li>
+                <?php } ?>
                 <li>
                     <a href="contact.php">Contact</a>
                 </li>
