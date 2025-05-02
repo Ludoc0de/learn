@@ -22,10 +22,10 @@ $insertTutorial = $mysqlClient->prepare(
     VALUE (:title, :link, :author, :is_enabled)'
 );
 $insertTutorial->execute([
-    'title' => [$title],
-    'link' => [$link],
-    'author' => [$author],
-    'is_enabled' => [$is_enabled],
+    'title' => $title,
+    'link' => $link,
+    'author' => $author,
+    'is_enabled' => $is_enabled,
 ]);
 
 ?>
