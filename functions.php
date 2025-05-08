@@ -30,6 +30,15 @@ function getTutorials(array $tutorials): array
     return $availableTutorials;
 }
 
+function getAllTutorials(array $tutorials): array
+{
+    $getAll = [];
+    foreach ($tutorials as $tutorial) {
+        $getAll[] = $tutorial;
+    }
+    return $getAll;
+}
+
 function getAuthors(string $authorEmail, array $users): string
 {
     foreach ($users as $user) {

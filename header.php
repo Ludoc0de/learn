@@ -15,6 +15,9 @@
                 <li>
                     <a href="create_tutorial.php">Creation de tutoriel</a>
                 </li>
+                <li>
+                    <a href="get_all_tutorials.php">Editer tutoriels</a>
+                </li>
                 <?php } ?>
                 <li>
                     <a href="contact.php">Contact</a>
