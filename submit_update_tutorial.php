@@ -31,6 +31,9 @@ $insertTutorial->execute([
 
 ?>
 
+<!-- Header -->
+<?php require_once(__DIR__ . '/header.php'); ?>
+
 <h1>Formulaire ajout de tutoriel bien reçu !</h1>
 
 <div>

@@ -7,10 +7,13 @@ if (
     || empty($postData['message'])
     || trim($postData['message']) === ''
 ) {
-    echo('Il faut un email et un message valides pour soumettre le formulaire.');
+    echo ('Il faut un email et un message valides pour soumettre le formulaire.');
     return;
 }
 ?>
+
+<!-- Header -->
+<?php require_once(__DIR__ . '/header.php'); ?>
 
 <h1>Message bien reçu !</h1>
 
