@@ -30,6 +30,21 @@ require_once(__DIR__ . '/functions.php');
         </a>
         </br>
         <i> by <?php echo getAuthors($tutorial['author'], $users); ?></i>
+
+        <div>
+            <ul>
+                <!-- add a condition only for admin acces  -->
+                <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
+                <li>
+                    <a href="update_tutorial.php?id=<?php echo ($tutorial['tutorial_id']); ?>">Éditer</a>
+                </li>
+                <li>
+                    <a href=" delete_tutorial.php">Supprimer</a>
+                </li>
+                <?php } ?>
+            </ul>
+        </div>
+
         <?php } ?>
     </div>
     <!-- Footer -->
