@@ -39,7 +39,7 @@ require_once(__DIR__ . '/functions.php');
                     <a href="update_tutorial.php?id=<?php echo ($tutorial['tutorial_id']); ?>">Éditer</a>
                 </li>
                 <li>
-                    <a href=" delete_tutorial.php">Supprimer</a>
+                    <a href=" delete_tutorial.php?id=<?php echo ($tutorial['tutorial_id']); ?>">Supprimer</a>
                 </li>
                 <?php } ?>
             </ul>
