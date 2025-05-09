@@ -15,20 +15,12 @@ if (
 }
 
 $id = $postData['id'];
-// $title = $postData['title'];
-// $link = $postData['link'];
-// $author =  $_SESSION["LOGGED_USER"]["email"];
-// $is_enabled = isset($postData['is_enabled']) ? 1 : 0;
 
 $deleteTutorial = $mysqlClient->prepare(
     'DELETE FROM tutorials WHERE tutorial_id=:id'
-    // 'UPDATE tutorials SET title = :title, link = :link, is_enabled=:is_enabled WHERE tutorial_id = :id'
 );
 $deleteTutorial->execute([
     'id' => $id,
-    // 'title' => $title,
-    // 'link' => $link,
-    // 'is_enabled' => $is_enabled,
 ]);
 
 redirectToUrl('index.php');
