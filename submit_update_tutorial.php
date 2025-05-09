@@ -19,10 +19,10 @@ $link = $postData['link'];
 $author =  $_SESSION["LOGGED_USER"]["email"];
 $is_enabled = isset($postData['is_enabled']) ? 1 : 0;
 
-$insertTutorial = $mysqlClient->prepare(
+$updateTutorial = $mysqlClient->prepare(
     'UPDATE tutorials SET title = :title, link = :link, is_enabled=:is_enabled WHERE tutorial_id = :id'
 );
-$insertTutorial->execute([
+$updateTutorial->execute([
     'id' => $id,
     'title' => $title,
     'link' => $link,
