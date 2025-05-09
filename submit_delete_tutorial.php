@@ -7,8 +7,6 @@ $postData = $_POST;
 
 if (
     !isset($postData['id'])
-    // || !isset($postData['title'])
-    // || !isset($postData['link'])
 ) {
     echo ('Il manque des informations dans le formulaire pour le soumettre.');
     return;
