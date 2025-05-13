@@ -58,6 +58,21 @@ function getTutorials()
     return $availableTutorials;
 }
 
+function createTutorials(string $title, string $link, string $author, int $is_enabled) {
+
+$insertTutorial = $mysqlClient->prepare(
+    'INSERT INTO tutorials(title, link, author, is_enabled)
+    VALUE (:title, :link, :author, :is_enabled)'
+);
+$insertTutorial->execute([
+    'title' => $title,
+    'link' => $link,
+    'author' => $author,
+    'is_enabled' => $is_enabled,
+]);
+
+}
+
 // function getAuthors(string $authorEmail, array $users): string
 // {
 //     foreach ($users as $user) {
@@ -81,9 +96,6 @@ function getAuthors($authorEmail)
         }
     }
 }
-
-
-function addTutorials() {}
 
 function getUsersFromDB()
 {
