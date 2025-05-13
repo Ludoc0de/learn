@@ -85,23 +85,22 @@ function getAuthors($authorEmail)
 
 function addTutorials() {}
 
-// function getUsersTable()
-// {
-//     $mysqlClient = dbConnect();
-//     $sqlQuery = "SELECT * FROM users";
-//     $usersStatement = $mysqlClient->prepare($sqlQuery);
-//     $usersStatement->execute();
-//     $users = $usersStatement->fetchAll();
-// }
+function getUsersFromDB()
+{
+    $mysqlClient = dbConnect();
+    $sqlQuery = "SELECT * FROM users";
+    $usersStatement = $mysqlClient->prepare($sqlQuery);
+    $usersStatement->execute();
+    $getAllUsers = $usersStatement->fetchAll();
 
-// function getTutorialsTable()
-// {
-//     $mysqlClient = dbConnect();
-//     $sqlQuery = "SELECT * FROM tutorials";
-//     $tutorialsStatement = $mysqlClient->prepare($sqlQuery);
-//     $tutorialsStatement->execute();
-//     $tutorials = $tutorialsStatement->fetchAll();
-// }
+    $users = [];
+    foreach ($getAllUsers as $user) {
+        $users[] = $user;
+    }
+
+    return $users;
+}
+
 
 
 function dbConnect()
