@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber pour les mioches</title>
-</head>
-
-<body>
+<?php ob_start(); ?>
     <div class="container">
         <?php require_once(__DIR__ . '/header.php'); ?>
         <h1>Contactez nous</h1>
@@ -26,8 +16,5 @@
         </form>
         <br />
     </div>
-    <?php require_once(__DIR__ . '/footer.php'); ?>
-</body>
-
-
-</html>
+<?php $content = ob_get_clean(); ?>
+<?php require('layout.php') ?>
