@@ -18,7 +18,7 @@ $link = $postData['link'];
 $author =  $_SESSION["LOGGED_USER"]["email"];
 $is_enabled = isset($postData['is_enabled']) ? 1 : 0;
 
-$test = createTutorials();
+createTutorials($title,  $link, $author, $is_enabled);
 
 require('templates/create_tutorial.php');
 ?>
