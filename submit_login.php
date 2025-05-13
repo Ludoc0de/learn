@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once(__DIR__ . '/variables.php');
+// require_once(__DIR__ . '/variables.php');
 // require_once(__DIR__ . '/functions.php');
 require('src/model.php');
-
+echo $users
 $postData = $_POST;
 if (
     !isset($postData['email'])
@@ -29,4 +29,4 @@ if (
         $_SESSION["LOGGIN_ERROR_MESSAGE"] = "mail et mot de passe invalide!, ressayer svp";
     }
 }
-redirectToUrl('/learn/templates/homepage.php');
+redirectToUrl('/learn/index.php');
