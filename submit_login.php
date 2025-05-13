@@ -1,9 +1,8 @@
 <?php
 session_start();
-// require_once(__DIR__ . '/variables.php');
-// require_once(__DIR__ . '/functions.php');
 require('src/model.php');
-echo $users
+$users = getUsersFromDB();
+
 $postData = $_POST;
 if (
     !isset($postData['email'])
@@ -21,7 +20,7 @@ if (
             $_SESSION["LOGGED_USER"] = [
                 'full_name' => $user['full_name'],
                 'email' => $user['email'],
-                'user_id' => $user['user_id'],
+                'user_id' => $user['users_id'],
             ];
         }
     }
@@ -29,4 +28,4 @@ if (
         $_SESSION["LOGGIN_ERROR_MESSAGE"] = "mail et mot de passe invalide!, ressayer svp";
     }
 }
-redirectToUrl('/learn/index.php');
+redirectToUrl('index.php');
