@@ -1,26 +1,25 @@
 <?php
 session_start();
-require_once(__DIR__ . '/variables.php');
 require('src/model.php');
 
 $postData = $_POST;
 
-if (
-    !isset($postData['title'])
-    || !isset($postData['link'])
-) {
-    echo ('Il faut renseigner le formulaire pour le soumettre.');
-    return;
-}
+// if (
+//     isset($postData['title'])
+//     || isset($postData['link'])
+// ) {
+//     echo ('Il faut renseigner le formulaire pour le soumettre.');
+//     return;
+// }
 
-$title = $postData['title'];
-$link = $postData['link'];
-$author =  $_SESSION["LOGGED_USER"]["email"];
-$is_enabled = isset($postData['is_enabled']) ? 1 : 0;
+// $title = $postData['title'];
+// $link = $postData['link'];
+// $author =  $_SESSION["LOGGED_USER"]["email"];
+// $is_enabled = isset($postData['is_enabled']) ? 1 : 0;
 
-createTutorials($title,  $link, $author, $is_enabled);
-
+// createTutorials($title,  $link, $author, $is_enabled);
 require('templates/create_tutorial.php');
+
 ?>
 
 
