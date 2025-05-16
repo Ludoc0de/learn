@@ -1,5 +1,4 @@
 <?php ob_start(); ?>
-<?php require_once(__DIR__ . '/login.php'); ?>
 <div>
     <h1>Ici on s'initie à la Cyber!</h1>
     <?php foreach (
