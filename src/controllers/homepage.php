@@ -1,6 +1,5 @@
 <?php
-session_start();
-require('src/model.php');
+require_once('src/model.php');
 function homepage()
 {
     $availableTutorials = getTutorials();
