@@ -22,6 +22,9 @@
                 <li>
                     <a href="/learn/templates/contact.php">Contact</a>
                 </li>
+                <li>
+                    <a href="/learn/index.php?action=login">Se connecter</a>
+                </li>
                 <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
                 <li>
                     <a href="/learn/logout.php">Déconnecté</a>
