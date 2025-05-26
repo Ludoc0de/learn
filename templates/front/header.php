@@ -13,14 +13,14 @@
                 <!-- add a condition only for admin acces  -->
                 <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
                 <li>
-                    <a href="/learn/submit_tutorial.php">Creation de tutoriel</a>
+                    <a href="/learn/index.php?action=addTutorial">Creation de tutoriel</a>
                 </li>
                 <li>
                     <a href="/learn/templates/get_all_tutorials.php">Editer tutoriels</a>
                 </li>
                 <?php } ?>
                 <li>
-                    <a href="/learn/templates/contact.php">Contact</a>
+                    <a href="/learn/index.php?action=contact">Contact</a>
                 </li>
                 <li>
                     <a href="/learn/index.php?action=login">Se connecter</a>
