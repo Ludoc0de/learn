@@ -7,10 +7,10 @@ function addTutorial()
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $postData = $_POST;
         if (
-            !isset($postData['title'])
-            || !isset($postData['link'])
-            || empty($postData['title'])
-            || empty($postData['link'])
+            isset($postData['title'])
+            || isset($postData['link'])
+            || !empty($postData['title'])
+            || !empty($postData['link'])
         ) {
             $alertMessage = 'Il faut renseigner le formulaire pour le soumettre.';
         } else {
