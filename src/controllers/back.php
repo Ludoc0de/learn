@@ -27,3 +27,10 @@ function tutorials()
     $allTutorials = getAllTutorials();
     require('templates/back/get_all_tutorials.php');
 }
+
+function logout()
+{
+    session_destroy();
+    $_SESSION = [];
+    redirectToUrl('index.php');
+}

@@ -12,6 +12,8 @@ if (isset($_GET['action'])) {
         addTutorial();
     } elseif ($_GET['action'] == 'tutorials') {
         tutorials();
+    } elseif ($_GET['action'] == 'logout') {
+        logout();
     }
 } else {
     homepage();
