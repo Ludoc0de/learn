@@ -9,7 +9,7 @@
         <?php echo $tutorial['link']; ?>
     </a>
     </br>
-    <i> by <?php echo getAuthors($tutorial['author'], $users); ?></i>
+    <i> by <?php echo getAuthors($tutorial['author']); ?></i>
 
     <div>
         <ul>
