@@ -16,7 +16,7 @@
                     <a href="/learn/index.php?action=addTutorial">Creation de tutoriel</a>
                 </li>
                 <li>
-                    <a href="/learn/index.php?action=tutorials.php">Editer tutoriels</a>
+                    <a href="/learn/index.php?action=tutorials">Editer tutoriels</a>
                 </li>
                 <?php } ?>
                 <li>
