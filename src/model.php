@@ -19,13 +19,28 @@ function isValidTutorial(array $tutorial): bool
     return $isAvailable;
 }
 
-function getAllTutorials(array $tutorials): array
+// function getAllTutorials(array $tutorials): array
+// {
+//     $getAll = [];
+//     foreach ($tutorials as $tutorial) {
+//         $getAll[] = $tutorial;
+//     }
+//     return $getAll;
+// }
+
+function getAllTutorials()
 {
-    $getAll = [];
+    $mysqlClient = dbConnect();
+    $sqlQuery = "SELECT * FROM tutorials";
+    $tutorialsStatement = $mysqlClient->prepare($sqlQuery);
+    $tutorialsStatement->execute();
+    $tutorials = $tutorialsStatement->fetchAll();
+
+    $allTutorials = [];
     foreach ($tutorials as $tutorial) {
-        $getAll[] = $tutorial;
+        $allTutorials[] = $tutorial;
     }
-    return $getAll;
+    return $allTutorials;
 }
 
 // function getTutorials(array $tutorials): array
