@@ -21,3 +21,9 @@ function addTutorial()
     }
     require('templates/back/create_tutorial.php');
 }
+
+function tutorials()
+{
+    $allTutorials = getAllTutorials();
+    require('templates/back/get_all_tutorials.php');
+}
