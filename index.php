@@ -10,6 +10,8 @@ if (isset($_GET['action'])) {
         contact();
     } elseif ($_GET['action'] == 'addTutorial') {
         addTutorial();
+    } elseif ($_GET['action'] == 'tutorials') {
+        tutorials();
     }
 } else {
     homepage();
