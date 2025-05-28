@@ -16,7 +16,7 @@
                     <a href="/learn/index.php?action=addTutorial">Creation de tutoriel</a>
                 </li>
                 <li>
-                    <a href="/learn/templates/get_all_tutorials.php">Editer tutoriels</a>
+                    <a href="/learn/index.php?action=tutorials">Editer tutoriels</a>
                 </li>
                 <?php } ?>
                 <li>
@@ -28,6 +28,10 @@
                 <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
                 <li>
                     <a href="/learn/logout.php">Déconnecté</a>
+                </li>
+                <?php } else { ?>
+                <li>
+                    <a href="/learn/index.php?action=login">Se connecter</a>
                 </li>
                 <?php } ?>
             </ul>
