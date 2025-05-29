@@ -12,6 +12,10 @@ if (isset($_GET['action'])) {
         addTutorial();
     } elseif ($_GET['action'] == 'tutorials') {
         tutorials();
+    } elseif ($_GET['action'] == 'updateTutorial') {
+        updateTutorial();
+    } elseif ($_GET['action'] == 'deleteTutorial') {
+        deleteTutorial();
     } elseif ($_GET['action'] == 'logout') {
         logout();
     }
