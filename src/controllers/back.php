@@ -28,6 +28,28 @@ function tutorials()
     require('templates/back/get_all_tutorials.php');
 }
 
+function updateTutorial()
+{
+    $alertMessage = null;
+    $postData = $_POST;
+    if (
+        !isset($postData['title']) || trim($postData['title']) === '' ||
+        !isset($postData['link']) || trim($postData['link']) === ''
+    ) {
+        $alertMessage = 'Il manque des informations dans le formulaire pour le soumettre.';
+        return;
+    } else {
+        $id = $postData['id'];
+        $title = $postData['title'];
+        $link = $postData['link'];
+        $author =  $_SESSION["LOGGED_USER"]["email"];
+        $is_enabled = isset($postData['is_enabled']) ? 1 : 0;
+
+        updateTutorialInDB($title,  $link, $is_enabled);
+    }
+    require('templates/back/update_tutorial.php');
+}
+
 function logout()
 {
     session_destroy();
