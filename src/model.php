@@ -129,6 +129,20 @@ function getUsersFromDB()
     return $users;
 }
 
+function updateTutorialInDB(string $title, string $link, int $is_enabled)
+{
+    $mysqlClient = dbConnect();
+    $updateTutorial = $mysqlClient->prepare(
+        'UPDATE tutorials SET title = :title, link = :link, is_enabled=:is_enabled WHERE tutorial_id = :id'
+    );
+    $updateTutorial->execute([
+        'id' => $id,
+        'title' => $title,
+        'link' => $link,
+        'is_enabled' => $is_enabled,
+    ]);
+    return $updateTutorial;
+}
 
 
 function dbConnect()
