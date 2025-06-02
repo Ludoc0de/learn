@@ -129,7 +129,20 @@ function getUsersFromDB()
     return $users;
 }
 
-function updateTutorialInDB(string $title, string $link, int $is_enabled)
+function getTutorialByIdInDB($id)
+{
+    $mysqlClient = dbConnect();
+    $getTutorialId = "SELECT * FROM tutorials WHERE tutorial_id = :id";
+    $retrieveTutorialStatement = $mysqlClient->prepare($getTutorialId);
+    $retrieveTutorialStatement->execute([
+        'id' => $id,
+    ]);
+    $tutorial = $retrieveTutorialStatement->fetch(PDO::FETCH_ASSOC);
+    return $tutorial;
+}
+
+
+function updateTutorialInDB(int $id, string $title, string $link, int $is_enabled)
 {
     $mysqlClient = dbConnect();
     $updateTutorial = $mysqlClient->prepare(
