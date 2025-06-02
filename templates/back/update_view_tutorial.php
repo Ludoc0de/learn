@@ -29,7 +29,7 @@ $tutorial = $retrieveTutorialStatement->fetch(PDO::FETCH_ASSOC);
         </div>
         <div>
             <label for="title">Titre du tutoriel</label>
-            <input type="text" id="title" name="title" value=" <?php echo htmlspecialchars($tutorial['title']); ?>">
+            <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($tutorial['title']); ?>">
         </div>
         <div>
             <label for="link">liens de la video</label>
