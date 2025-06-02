@@ -16,7 +16,7 @@
             <!-- add a condition only for admin acces  -->
             <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
             <li>
-                <a href="/learn/index.php?action=updateTutorial">Éditer</a>
+                <a href="/learn/index.php?action=getTutorialId&id=<?php echo ($tutorial['tutorial_id']); ?>">Éditer</a>
                 <!-- <a href="update_tutorial.php?id=<?php echo ($tutorial['tutorial_id']); ?>">Éditer</a> -->
             </li>
             <li>
