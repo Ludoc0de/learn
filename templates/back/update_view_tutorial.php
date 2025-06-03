@@ -17,8 +17,6 @@ $tutorial = $retrieveTutorialStatement->fetch(PDO::FETCH_ASSOC);
 
 ?> -->
 <?php ob_start(); ?>
-<?php ob_start(); ?>
-
 <div class="container">
     <?php require_once(__DIR__ . '/header.php'); ?>
     <h1>Mettre à jour un tutoriel</h1>
