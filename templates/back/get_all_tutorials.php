@@ -20,7 +20,8 @@
                 <!-- <a href="update_tutorial.php?id=<?php echo ($tutorial['tutorial_id']); ?>">Éditer</a> -->
             </li>
             <li>
-                <a href=" delete_tutorial.php?id=<?php echo ($tutorial['tutorial_id']); ?>">Supprimer</a>
+                <a
+                    href="/learn/index.php?action=deleteTutorial.php?id=<?php echo ($tutorial['tutorial_id']); ?>">Supprimer</a>
             </li>
             <?php } ?>
         </ul>
