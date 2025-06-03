@@ -66,6 +66,29 @@ function updateTutorial()
     redirectToUrl('index.php?action=tutorials');
 }
 
+function deleteTutorial()
+{
+    // $alertMessage = null;
+    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //     $postData = $_POST;
+    //     if (
+    //         !isset($postData['title']) || trim($postData['title']) === '' ||
+    //         !isset($postData['link']) || trim($postData['link']) === ''
+    //     ) {
+    //         $alertMessage = 'Il manque des informations dans le formulaire pour le soumettre.';
+    //         return;
+    //     }
+    //     $id = $postData['id'];
+    //     $title = $postData['title'];
+    //     $link = $postData['link'];
+    //     $author =  $_SESSION["LOGGED_USER"]["email"];
+    //     $is_enabled = isset($postData['is_enabled']) ? 1 : 0;
+
+    //     updateTutorialInDB($id, $title,  $link, $is_enabled);
+    }
+
+    redirectToUrl('index.php?action=tutorials');
+}
 function logout()
 {
     session_destroy();
