@@ -17,7 +17,7 @@ if (isset($_GET['action'])) {
     } elseif ($_GET['action'] == 'updateTutorial') {
         updateTutorial();
     } elseif ($_GET['action'] == 'deleteTutorial') {
-        // deleteTutorial();
+        deleteTutorial();
     } elseif ($_GET['action'] == 'logout') {
         logout();
     }
