@@ -10,14 +10,14 @@
 <body>
     <nav>
         <div>
-            <a href="/learn/index.php">Site d'initiation</a>
+            <a href="/learn/index.php?action=home">Site d'initiation</a>
             <button type="button">
                 <span></span>
             </button>
             <div>
                 <ul>
                     <li>
-                        <a href="/learn/index.php">Accueil</a>
+                        <a href="/learn/index.php?action=home">Accueil</a>
                     </li>
                     <!-- add a condition only for admin acces  -->
                     <?php if (isset($_SESSION["LOGGED_USER"])) { ?>

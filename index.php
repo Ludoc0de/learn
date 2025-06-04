@@ -5,7 +5,7 @@ require_once('src/controllers/back.php');
 // require_once('src/controllers/submit_login.php');
 if (isset($_GET['action']) && $_GET['action'] !== "") {
     if (isset($_GET['action'])) {
-        if ($_GET['action'] == 'homePage') {
+        if ($_GET['action'] == 'home') {
             homepage();
         } elseif ($_GET['action'] == 'login') {
             login();
