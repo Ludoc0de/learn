@@ -157,6 +157,17 @@ function updateTutorialInDB(int $id, string $title, string $link, int $is_enable
     return $updateTutorial;
 }
 
+function deleteTutorialInDB(int $id)
+{
+    $mysqlClient = dbConnect();
+    $deleteTutorial = $mysqlClient->prepare(
+        'DELETE FROM tutorials WHERE tutorial_id=:id'
+    );
+    $deleteTutorial->execute([
+        'id' => $id,
+    ]);
+    return $deleteTutorial;
+}
 
 function dbConnect()
 {
