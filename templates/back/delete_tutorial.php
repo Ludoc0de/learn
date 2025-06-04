@@ -16,11 +16,11 @@
 
 
 ?>
-<?php ob_start(); ?>
+<!-- <?php ob_start(); ?>
 <div class="container">
     <?php require_once(__DIR__ . '/header.php'); ?>
     <h1>Mettre à jour un tutoriel</h1>
-    <form action="submit_delete_tutorial.php" method="POST">
+    <form action="/learn/index.php?action=deleteTutorial" method="POST">
         <div>
             <label for="id">Identifiant du tutoriel</label>
             <input type="hidden" id="id" name="id" value="<?php echo ($getData['id']); ?>">
@@ -33,4 +33,4 @@
     <br />
 </div>
 <?php $content = ob_get_clean(); ?>
-<?php require('layout.php') ?>
+<?php require('layout.php') ?> -->
