@@ -4,20 +4,15 @@ require_once('src/model.php');
 function addTutorial()
 {
     $alertMessage = null;
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $postData = $_POST;
-        if (
-            !isset($postData['title']) || trim($postData['title']) === '' ||
-            !isset($postData['link']) || trim($postData['link']) === ''
-        ) {
-            $alertMessage = 'Il faut renseigner le formulaire pour le soumettre.';
-        } else {
-            $title = $postData['title'];
-            $link = $postData['link'];
-            $author =  $_SESSION["LOGGED_USER"]["email"];
-            $is_enabled = isset($postData['is_enabled']) ? 1 : 0;
-            createTutorials($title,  $link, $author, $is_enabled);
-        }
+    // safe input, avoid space, check if data define else get ''
+    $title = trim($_POST['title'] ?? '');
+    $link = trim($_POST['link'] ?? '');
+    $author =  $_SESSION["LOGGED_USER"]["email"];
+    $is_enabled = isset($_POST['is_enabled']) ? 1 : 0;
+    if (empty($title) || empty($link)) {
+        $alertMessage = "Merci de renseigner tous les champs.";
+    } else {
+        createTutorials($title,  $link, $author, $is_enabled);
     }
     require('templates/back/create_tutorial.php');
 }
