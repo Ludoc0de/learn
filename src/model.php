@@ -129,6 +129,25 @@ function getUsersFromDB()
     return $users;
 }
 
+function checkLoginUser($email, $password)
+{
+    $users = getUsersFromDB();
+    foreach ($users as $user) {
+        if (
+            $user['email'] === $email &&
+            $user['password'] === $password
+        ) {
+            $_SESSION["LOGGED_USER"] = [
+                'full_name' => $user['full_name'],
+                'email' => $user['email'],
+                'user_id' => $user['users_id'],
+            ];
+            redirectToUrl('index.php');
+            return;
+        }
+    }
+}
+
 function getTutorialByIdInDB($id)
 {
     $mysqlClient = dbConnect();
