@@ -2,12 +2,15 @@
 <h1>Connectez vous</h1>
 <form action="/learn/index.php?action=login" method="POST">
     <!-- si message d'erreur on l'affiche -->
-    <?php if (isset($_SESSION["LOGGIN_ERROR_MESSAGE"])) { ?>
-    <div>
-        <?php echo $_SESSION["LOGGIN_ERROR_MESSAGE"];
-                unset($_SESSION["LOGGIN_ERROR_MESSAGE"]); ?>
+    <?php
+        if ($alertMessage) {
+        ?>
+    <div class="alert alert-danger">
+        <?= $alertMessage ?>
     </div>
-    <?php } ?>
+    <?php
+        }
+        ?>
     <div>
         <label for="email">Email</label>
         <input type="email" id="email" name="email" aria-describedby="email-help">
