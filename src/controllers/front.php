@@ -10,31 +10,18 @@ function homepage()
 function login()
 {
     $users = getUsersFromDB();
-    $postData = $_POST;
-    if (
-        !isset($postData['email'])
-        || !filter_var($postData['email'], FILTER_VALIDATE_EMAIL)
-        || empty($postData['password'])
-        || trim($postData['password']) === ''
-    ) {
-        $_SESSION["LOGGIN_ERROR_MESSAGE"] = "Complétez votre email et mdp svp";
+    // safe input, avoid space, check if data define else get ''
+    $email = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
+    $alertMessage = null;
+
+    if (empty($email) || empty($password)) {
+        $alertMessage = "Merci de renseigner tous les champs.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $alertMessage = "Format d'email invalide.";
     } else {
-        foreach ($users as $user) {
-            if (
-                $user['email'] === $postData['email'] &&
-                $user['password'] === $postData['password']
-            ) {
-                $_SESSION["LOGGED_USER"] = [
-                    'full_name' => $user['full_name'],
-                    'email' => $user['email'],
-                    'user_id' => $user['users_id'],
-                ];
-                redirectToUrl('index.php');
-            }
-        }
-        if (!isset($_SESSION["LOGGED_USER"])) {
-            $_SESSION["LOGGIN_ERROR_MESSAGE"] = "mail et mot de passe invalide, ressayer svp";
-        }
+        checkLoginUser($email, $password);
+        $alertMessage = "Identifiant ou mot de passe incorrect.";
     }
     require('templates/front/login.php');
 }
