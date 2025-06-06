@@ -148,13 +148,13 @@ function checkLoginUser($email, $password)
     }
 }
 
-function getTutorialByIdInDB($id)
+function getTutorialByIdInDB($tutorialId)
 {
     $mysqlClient = dbConnect();
     $getTutorialId = "SELECT * FROM tutorials WHERE tutorial_id = :id";
     $retrieveTutorialStatement = $mysqlClient->prepare($getTutorialId);
     $retrieveTutorialStatement->execute([
-        'id' => $id,
+        'id' => $tutorialId,
     ]);
     $tutorial = $retrieveTutorialStatement->fetch(PDO::FETCH_ASSOC);
     return $tutorial;
