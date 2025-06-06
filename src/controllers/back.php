@@ -22,21 +22,22 @@ function tutorials()
     $allTutorials = getAllTutorials();
     require('templates/back/get_all_tutorials.php');
 }
-//
-function getTutorialById()
+
+function getTutorialById($tutorialId)
 {
     $alertMessage = null;
-    $getData = $_GET;
-    if (!isset($getData['id']) || !is_numeric($getData['id'])) {
+    if ($tutorialId <= 0) {
         $alertMessage = 'Il faut un identifiant de tutoriel pour la modifier.';
         return;
     }
-    $id = $getData['id'];
-    $tutorial = getTutorialByIdInDB($id);
-
+    $tutorial = getTutorialByIdInDB($tutorialId);
+    if (!$tutorial) {
+        $alertMessage = "Le tutoriel n'existe pas ou a été supprimé.";
+        return;
+    }
     require('templates/back/update_view_tutorial.php');
 }
-//
+
 function updateTutorial()
 {
     $alertMessage = null;
