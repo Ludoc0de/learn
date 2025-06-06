@@ -20,6 +20,14 @@ $tutorial = $retrieveTutorialStatement->fetch(PDO::FETCH_ASSOC);
 <div class="container">
     <?php require_once(__DIR__ . '/header.php'); ?>
     <h1>Mettre à jour un tutoriel</h1>
+    <?php
+    if ($alertMessage) {
+    ?>
+    <div class="alert alert-danger">
+        <h3><?= $alertMessage ?></h3>
+    </div>
+    <?php
+    } else { ?>
     <form action="/learn/index.php?action=updateTutorial" method="POST">
         <div>
             <label for="id">Identifiant du tutoriel</label>
@@ -41,5 +49,7 @@ $tutorial = $retrieveTutorialStatement->fetch(PDO::FETCH_ASSOC);
     </form>
     <br />
 </div>
+<?php  }
+?>
 <?php $content = ob_get_clean(); ?>
 <?php require('layout.php') ?>
