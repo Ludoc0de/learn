@@ -33,6 +33,7 @@ function getTutorialById($tutorialId)
     $tutorial = getTutorialByIdInDB($tutorialId);
     if (!$tutorial) {
         $alertMessage = "Le tutoriel n'existe pas ou a été supprimé.";
+        require('templates/back/update_view_tutorial.php');
         return;
     }
     require('templates/back/update_view_tutorial.php');
