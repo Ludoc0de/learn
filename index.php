@@ -14,7 +14,7 @@ if (isset($_GET['action']) && $_GET['action'] !== "") {
         }
         // ADMIN
         elseif ($_GET['action'] == 'addTutorial') {
-            // access only i connected
+            // access only if connected
             if (!isset($_SESSION['LOGGED_USER'])) {
                 redirectToUrl('index.php?action=login');
             }
@@ -36,9 +36,12 @@ if (isset($_GET['action']) && $_GET['action'] !== "") {
         } elseif ($_GET['action'] == 'updateTutorial') {
             if (!isset($_SESSION['LOGGED_USER'])) {
                 redirectToUrl('index.php?action=login');
+            } elseif (isset($_GET['id']) && $_GET['id'] > 0) {
+                $tutorialId = (int) $_GET['id'];
+                updateTutorial($tutorialId);
+            } else {
+                echo 'Identifiant de tutoriel manquant ou invalide.';
             }
-            // if (isset($_GET['id']) && $_GET['id'] > 0)
-            updateTutorial();
         } elseif ($_GET['action'] == 'deleteTutorial') {
             if (!isset($_SESSION['LOGGED_USER'])) {
                 redirectToUrl('index.php?action=login');
