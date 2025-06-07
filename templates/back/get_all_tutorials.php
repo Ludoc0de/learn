@@ -1,30 +1,30 @@
 <?php ob_start(); ?>
 <div>
-    <h1>Ici on s'initie à la Cyber!</h1>
+    <h1>Administrer les tutoriels</h1>
     <?php foreach ($allTutorials as $tutorial) { ?>
-    <h5>
-        <?php echo $tutorial['title']; ?>
-    </h5>
-    <a>
-        <?php echo $tutorial['link']; ?>
-    </a>
-    </br>
-    <i> by <?php echo getAuthors($tutorial['author']); ?></i>
+        <h5>
+            <?php echo $tutorial['title']; ?>
+        </h5>
+        <a>
+            <?php echo $tutorial['link']; ?>
+        </a>
+        </br>
+        <i> by <?php echo getAuthors($tutorial['author']); ?></i>
 
-    <div>
-        <ul>
-            <!-- add a condition only for admin acces  -->
-            <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
-            <li>
-                <a href="/learn/index.php?action=getTutorialId&id=<?php echo ($tutorial['tutorial_id']); ?>">Éditer</a>
-            </li>
-            <li>
-                <a href="/learn/index.php?action=deleteTutorial&id=<?php echo ($tutorial['tutorial_id']); ?>"
-                    onclick="return confirm('attention suppression définitive !')">Supprimer</a>
-            </li>
-            <?php } ?>
-        </ul>
-    </div>
+        <div>
+            <ul>
+                <!-- add a condition only for admin acces  -->
+                <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
+                    <li>
+                        <a href="/learn/index.php?action=getTutorialId&id=<?php echo ($tutorial['tutorial_id']); ?>">Éditer</a>
+                    </li>
+                    <li>
+                        <a href="/learn/index.php?action=deleteTutorial&id=<?php echo ($tutorial['tutorial_id']); ?>"
+                            onclick="return confirm('attention suppression définitive !')">Supprimer</a>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
 
     <?php } ?>
 </div>
