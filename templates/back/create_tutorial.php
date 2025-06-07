@@ -2,13 +2,13 @@
 <div class="container">
     <?php require_once(__DIR__ . '/header.php'); ?>
     <h1>Ajoutez un tutoriel</h1>
-    <form action="/learn/index.php?action=addTutorial" method="POST">
+    <form action="/learn/index.php?action=createTutorial" method="POST">
         <?php
         if ($alertMessage) {
         ?>
-        <div class="alert alert-danger">
-            <?= $alertMessage ?>
-        </div>
+            <div class="alert alert-danger">
+                <?= $alertMessage ?>
+            </div>
         <?php
         }
         ?>
