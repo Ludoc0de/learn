@@ -142,7 +142,7 @@ function checkLoginUser($email, $password)
                 'email' => $user['email'],
                 'user_id' => $user['users_id'],
             ];
-            redirectToUrl('index.php');
+            redirectToUrl('index.php?action=tutorials');
             return;
         }
     }
