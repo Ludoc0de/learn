@@ -1,6 +1,5 @@
 <?php ob_start(); ?>
 <div class="container">
-    <?php require_once(__DIR__ . '/header.php'); ?>
     <h1>Ajoutez un tutoriel</h1>
     <form action="/learn/index.php?action=createTutorial" method="POST">
         <?php
