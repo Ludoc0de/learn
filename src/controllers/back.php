@@ -46,32 +46,12 @@ function updateTutorial($tutorialId)
     $id = $tutorialId;
     $title = trim($_POST['title'] ?? '');
     $link = trim($_POST['link'] ?? '');
-    // $author =  $_SESSION["LOGGED_USER"]["email"];
     $is_enabled = isset($_POST['is_enabled']) ? 1 : 0;
     if (empty($title) || empty($link)) {
         $alertMessage = "Merci de renseigner tous les champs.";
     } else {
         updateTutorialInDB($id, $title,  $link, $is_enabled);
     }
-
-    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //     $postData = $_POST;
-    //     if (
-    //         !isset($postData['title']) || trim($postData['title']) === '' ||
-    //         !isset($postData['link']) || trim($postData['link']) === ''
-    //     ) {
-    //         $alertMessage = 'Il manque des informations dans le formulaire pour le soumettre.';
-    //         return;
-    //     }
-    //     $id = $postData['id'];
-    //     $title = $postData['title'];
-    //     $link = $postData['link'];
-    //     $author =  $_SESSION["LOGGED_USER"]["email"];
-    //     $is_enabled = isset($postData['is_enabled']) ? 1 : 0;
-
-    //     updateTutorialInDB($id, $title,  $link, $is_enabled);
-    // }
-
     redirectToUrl('index.php?action=tutorials');
 }
 
