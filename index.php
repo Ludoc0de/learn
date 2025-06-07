@@ -18,7 +18,7 @@ if (isset($_GET['action']) && $_GET['action'] !== "") {
             if (!isset($_SESSION['LOGGED_USER'])) {
                 redirectToUrl('index.php?action=login');
             }
-            addTutorial();
+            createTutorial();
         } elseif ($_GET['action'] == 'tutorials') {
             if (!isset($_SESSION['LOGGED_USER'])) {
                 redirectToUrl('index.php?action=login');

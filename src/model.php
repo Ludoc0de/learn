@@ -73,7 +73,7 @@ function getTutorials()
     return $availableTutorials;
 }
 
-function createTutorials(string $title, string $link, string $author, int $is_enabled)
+function createTutorialInDB(string $title, string $link, string $author, int $is_enabled)
 {
     $mysqlClient = dbConnect();
     $insertTutorial = $mysqlClient->prepare(

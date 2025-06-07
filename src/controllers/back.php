@@ -1,7 +1,7 @@
 <?php
 require_once('src/model.php');
 
-function addTutorial()
+function createTutorial()
 {
     $alertMessage = null;
     // safe input, avoid space, check if data define else get ''
@@ -12,7 +12,7 @@ function addTutorial()
     if (empty($title) || empty($link)) {
         $alertMessage = "Merci de renseigner tous les champs.";
     } else {
-        createTutorials($title,  $link, $author, $is_enabled);
+        createTutorialInDB($title,  $link, $author, $is_enabled);
     }
     require('templates/back/create_tutorial.php');
 }
