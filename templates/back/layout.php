@@ -10,34 +10,25 @@
 <body>
     <nav>
         <div>
-            <a href="/learn/index.php?action=home">Site d'initiation</a>
+            <a href="/learn/index.php?action=admin">Site d'initiation</a>
             <button type="button">
                 <span></span>
             </button>
             <div>
                 <ul>
                     <li>
-                        <a href="/learn/index.php?action=home">Accueil</a>
+                        <a href="/learn/index.php?action=admin">Accueil admin</a>
                     </li>
                     <!-- add a condition only for admin acces  -->
                     <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
                     <li>
-                        <a href="/learn/index.php?action=addTutorial">Creation de tutoriel</a>
+                        <a href="/learn/index.php?action=createTutorial">Creation de tutoriel</a>
                     </li>
                     <li>
                         <a href="/learn/index.php?action=tutorials">Editer tutoriels</a>
                     </li>
-                    <?php } ?>
-                    <li>
-                        <a href="/learn/index.php?action=contact">Contact</a>
-                    </li>
-                    <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
                     <li>
                         <a href="/learn/index.php?action=logout">Déconnecté</a>
-                    </li>
-                    <?php } else { ?>
-                    <li>
-                        <a href="/learn/index.php?action=login">Se connecter</a>
                     </li>
                     <?php } ?>
                 </ul>
