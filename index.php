@@ -13,8 +13,13 @@ if (isset($_GET['action']) && $_GET['action'] !== "") {
             contact();
         }
         // ADMIN
-        elseif ($_GET['action'] == 'createTutorial') {
-            // access only if connected
+        // access only if connected
+        elseif ($_GET['action'] == 'admin') {
+            if (!isset($_SESSION['LOGGED_USER'])) {
+                redirectToUrl('index.php?action=login');
+            }
+            adminPage();
+        } elseif ($_GET['action'] == 'createTutorial') {
             if (!isset($_SESSION['LOGGED_USER'])) {
                 redirectToUrl('index.php?action=login');
             }
