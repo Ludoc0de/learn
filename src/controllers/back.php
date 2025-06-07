@@ -1,6 +1,12 @@
 <?php
 require_once('src/model.php');
 
+function adminPage()
+{
+    $availableTutorials = getTutorials();
+    require('templates/back/admin_page.php');
+}
+
 function createTutorial()
 {
     $alertMessage = null;
@@ -71,5 +77,5 @@ function logout()
 {
     session_destroy();
     $_SESSION = [];
-    redirectToUrl('index.php');
+    redirectToUrl('index.php?action=home');
 }
