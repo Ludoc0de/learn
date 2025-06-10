@@ -20,8 +20,13 @@ function login()
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $alertMessage = "Format d'email invalide.";
     } else {
-        checkLoginUser($email, $password);
-        $alertMessage = "Identifiant ou mot de passe incorrect.";
+        $success = checkLoginUser($email, $password);
+        if ($success) {
+            header("Location: index.php?action=tutorials");
+            exit;
+        } else {
+            $alertMessage = "Identifiant ou mot de passe incorrect.";
+        }
     }
     require('templates/front/login.php');
 }
