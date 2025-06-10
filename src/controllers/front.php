@@ -28,15 +28,13 @@ function login()
 
 function contact()
 {
-    $contactMessage = null;
+    $alertMessage = null;
+    // safe input, avoid space, check if data define else get ''
+    $email = trim($_POST['email'] ?? '');
+    $message = trim($_POST['message'] ?? '');
     $postData = $_POST;
-    if (
-        !isset($postData['email'])
-        || !filter_var($postData['email'], FILTER_VALIDATE_EMAIL)
-        || empty($postData['message'])
-        || trim($postData['message']) === ''
-    ) {
-        $contactMessage = 'Il faut un email et un message valides pour soumettre le formulaire.';
+    if (empty($email) || empty($message)) {
+        $alertMessage = "Merci de renseigner tous les champs.";
     }
     require('templates/front/contact.php');
 }
