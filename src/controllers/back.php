@@ -61,16 +61,18 @@ function updateTutorial($tutorialId)
     redirectToUrl('index.php?action=tutorials');
 }
 
+
 function deleteTutorial($tutorialId)
 {
-    $alertMessage = "test";
+    $alertMessage = null;
     $id = $tutorialId;
     if ($id <= 0) {
         $alertMessage = 'Il faut un identifiant de tutoriel pour le supprimer.';
         return;
     }
     deleteTutorialInDB($id);
-    redirectToUrl('index.php?action=tutorials');
+    header("Location: index.php?action=tutorials");
+    exit;
 }
 
 function logout()
