@@ -65,7 +65,11 @@ try {
             }
         }
     } else {
-        homepage();
+        if (isset($_SESSION['LOGGED_USER'])) {
+            adminPage();
+        } else {
+            homepage();
+        }
     }
 } catch (Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
