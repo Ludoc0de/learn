@@ -1,6 +1,21 @@
 <?php ob_start(); ?>
 <div>
     <h1>Ici on s'initie à la Cyber!</h1>
+    <div class="flex flex-row">
+        <?php foreach (
+            $availableTutorials as $tutorial
+        ) { ?>
+        <h5>
+            <?php echo $tutorial['title']; ?>
+        </h5>
+        <a>
+            <?php echo $tutorial['link']; ?>
+        </a>
+        <i>by <?php echo getAuthors($tutorial['author']); ?> </i>
+        <?php } ?>
+    </div>
+
+    <!-- <h1>Ici on s'initie à la Cyber!</h1>
     <?php foreach (
         $availableTutorials as $tutorial
     ) { ?>
@@ -11,8 +26,8 @@
         <?php echo $tutorial['link']; ?>
     </a>
     </br>
-    <i>by <?php echo getAuthors($tutorial['author']); ?>
-        <?php } ?>
+    <i>by <?php echo getAuthors($tutorial['author']); ?></i>
+        <?php } ?> -->
 </div>
 <?php $content = ob_get_clean(); ?>
 <?php require('layout.php') ?>
