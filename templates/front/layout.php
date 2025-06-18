@@ -18,7 +18,7 @@
             </button> -->
             <div>
                 <!--  -->
-                <div class="navbar bg-base-100 shadow-sm">
+                <div class="navbar bg-base-100">
                     <div class="dropdown">
                         <div class="flex-none">
                             <button class="btn btn-square btn-ghost">
@@ -58,7 +58,7 @@
     <?= $content ?>
     <footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
         <aside>
-            <p>Copyright © {new Date().getFullYear()} - Tout les droits réserver pour La cyber pour les mioches</p>
+            <p>Copyright © 2025 - Tout les droits réserver pour La cyber pour les mioches</p>
         </aside>
     </footer>
     <!-- <footer>
