@@ -7,15 +7,18 @@
                 <p class="py-6">
                     "Mieux comprendre la cybers sécurité, c'est mieux protéger son identité numérique."
                 </p>
-                <a class="btn btn-primary">Se connecter</a>
+                <a href="index.php?action=login" class=" btn btn-primary">Se connecter
+
+                </a>
             </div>
         </div>
+        <img src="public/images/arrow.svg" alt="flèche" class="relative top-50 left-32 animate-pulse">
     </div>
-    <div class="flex flex-row justify-between my-10">
+    <div class=" flex flex-col justify-between my-10 lg:flex-row">
         <?php foreach (
             $availableTutorials as $tutorial
         ) { ?>
-        <div class="card w-96 bg-base-200 rounded-sm card-md shadow-sm">
+        <div class="card w-96 bg-base-200 rounded-sm card-md shadow-sm my-6 lg:my-0">
             <div class="card-body">
                 <h2 class="card-title"> <?php echo $tutorial['title']; ?></h2>
                 <a> <?php echo $tutorial['link']; ?></a>
