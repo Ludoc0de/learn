@@ -15,33 +15,7 @@
             </div>
         </div>
         <?php } ?>
-        <!-- <?php foreach (
-                    $availableTutorials as $tutorial
-                ) { ?>
-            <div class="flex flex-col flex-1 bg-base-300 rounded-sm m-2 p-4">
-                <h5 class="flex">
-                <?php echo $tutorial['title']; ?>
-            </h5>
-            <a>
-                <?php echo $tutorial['link']; ?>
-            </a>
-            <i>by <?php echo getAuthors($tutorial['author']); ?> </i>
-        </div>
-        <?php } ?> -->
     </div>
-    <!-- <h1>Ici on s'initie à la Cyber!</h1>
-    <?php foreach (
-        $availableTutorials as $tutorial
-    ) { ?>
-    <h5>
-        <?php echo $tutorial['title']; ?>
-    </h5>
-    <a>
-        <?php echo $tutorial['link']; ?>
-    </a>
-    </br>
-    <i>by <?php echo getAuthors($tutorial['author']); ?></i>
-        <?php } ?> -->
 </div>
 <?php $content = ob_get_clean(); ?>
 <?php require('layout.php') ?>
