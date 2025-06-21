@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
     <nav>
         <div class="navbar bg-base-100">
             <div class="dropdown">
@@ -34,7 +34,9 @@
             </div>
         </div>
     </nav>
-    <?= $content ?>
+    <main class="flex-grow px-5">
+        <?= $content ?>
+    </main>
     <footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
         <aside>
             <p>Copyright © 2025 - Tout les droits réserver pour La cyber pour les mioches</p>
