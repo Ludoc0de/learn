@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="flex-1">
-                <a class="btn btn-ghost text-xl" href="/learn/index.php?action=home">Site d'initiation</a>
+                <a class="btn btn-ghost text-xl" href="/learn/index.php?action=tutorials">Site d'initiation</a>
             </div>
         </div>
     </nav>
