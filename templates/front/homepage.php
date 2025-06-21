@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-<div class="px-5">
+<div>
     <div class="hero bg-base-200 rounded-sm min-h-screen">
         <div class="hero-content text-center">
             <div class="max-w-md">
