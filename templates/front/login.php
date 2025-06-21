@@ -27,7 +27,7 @@ if (!isset($_SESSION["LOGGED_USER"])) { ?>
                         <?php
                             }
                             ?>
-                        <button type="submit" class="btn btn-neutral mt-4">Se connecter</button>
+                        <button type="submit" class="btn btn-primary mt-4">Se connecter</button>
                     </fieldset>
                 </div>
             </div>
