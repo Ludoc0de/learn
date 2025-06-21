@@ -19,6 +19,7 @@ function createTutorial()
         $alertMessage = "Merci de renseigner tous les champs.";
     } else {
         createTutorialInDB($title,  $link, $author, $is_enabled);
+        redirectToUrl('index.php?action=tutorials');
     }
     require('templates/back/create_tutorial.php');
 }
