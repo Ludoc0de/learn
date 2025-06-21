@@ -14,7 +14,7 @@
         </div>
         <img src="public/images/arrow.svg" alt="flèche" class="relative top-50 left-32 animate-pulse">
     </div>
-    <div class=" flex flex-col justify-between my-10 lg:flex-row">
+    <div class="flex flex-wrap gap-6 justify-start my-10 lg:flex-row">
         <?php foreach (
             $availableTutorials as $tutorial
         ) { ?>
@@ -30,20 +30,5 @@
         <?php } ?>
     </div>
 </div>
-<!-- <div>
-    <h1>Page administrateur!</h1>
-    <?php foreach (
-        $availableTutorials as $tutorial
-    ) { ?>
-        <h5>
-            <?php echo $tutorial['title']; ?>
-        </h5>
-        <a>
-            <?php echo $tutorial['link']; ?>
-        </a>
-        </br>
-        <i>by <?php echo getAuthors($tutorial['author']); ?>
-        <?php } ?>
-</div> -->
 <?php $content = ob_get_clean(); ?>
 <?php require('layout.php') ?>

@@ -6,7 +6,7 @@
             Editer les tutoriels ici, soit modifier ou supprimer.
         </p>
     </div>
-    <div class=" flex flex-wrap gap-6 justify-start my-10 lg:flex-row">
+    <div class="flex flex-wrap gap-6 justify-start my-10 lg:flex-row">
         <?php foreach (
             $allTutorials as $tutorial
         ) { ?>

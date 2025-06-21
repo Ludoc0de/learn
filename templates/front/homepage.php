@@ -14,7 +14,7 @@
         </div>
         <img src="public/images/arrow.svg" alt="flèche" class="relative top-50 left-32 animate-pulse">
     </div>
-    <div class=" flex flex-col justify-between my-10 lg:flex-row">
+    <div class="flex flex-wrap gap-6 justify-start my-10 lg:flex-row">
         <?php foreach (
             $availableTutorials as $tutorial
         ) { ?>
