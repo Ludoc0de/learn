@@ -7,7 +7,7 @@
                 <p class="py-6">
                     "Mieux comprendre la cybers sécurité, c'est mieux protéger son identité numérique."
                 </p>
-                <a href="index.php?action=login" class=" btn btn-primary">Éditer les tutos
+                <a href="index.php?action=tutorials" class=" btn btn-primary">Éditer les tutos
 
                 </a>
             </div>
