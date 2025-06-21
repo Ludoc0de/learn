@@ -17,7 +17,7 @@ if (!isset($_SESSION["LOGGED_USER"])) { ?>
                         <input type="email" id="email" name="email" class="input" placeholder="Email" />
                         <label class="label">Mot de passe</label>
                         <input type="password" id="password" name="password" class="input" placeholder="Password" />
-                        <!-- si message d'erreur on l'affiche -->
+                        <!-- if error message we can see -->
                         <?php
                             if ($alertMessage) {
                             ?>
