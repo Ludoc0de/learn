@@ -13,6 +13,7 @@
         <div class="card w-96 bg-base-200 rounded-sm card-md shadow-sm my-6 lg:my-0">
             <div class="card-body">
                 <h2 class="card-title"> <?php echo $tutorial['title']; ?></h2>
+                <p>Le tutoriel <?php echo $tutorial['is_enabled'] ? 'est visible' : "n'est pas visible"; ?></p>
                 <a> <?php echo $tutorial['link']; ?></a>
                 <div class="justify-end card-actions">
                     <i>Par <?php echo getAuthors($tutorial['author']); ?></i>
