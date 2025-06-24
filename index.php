@@ -21,6 +21,11 @@ try {
                     redirectToUrl('index.php?action=login');
                 }
                 adminPage();
+            } elseif ($_GET['action'] == 'createUser') {
+                if (!isset($_SESSION['LOGGED_USER'])) {
+                    redirectToUrl('index.php?action=login');
+                }
+                createUser();
             } elseif ($_GET['action'] == 'createTutorial') {
                 if (!isset($_SESSION['LOGGED_USER'])) {
                     redirectToUrl('index.php?action=login');
