@@ -14,7 +14,6 @@ function login()
     $email = trim($_POST['email'] ?? '');
     $password = trim($_POST['password'] ?? '');
     $alertMessage = null;
-
     if (empty($email) || empty($password)) {
         $alertMessage = "Merci de renseigner tous les champs.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
