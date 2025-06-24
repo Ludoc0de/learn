@@ -7,6 +7,25 @@ function adminPage()
     require('templates/back/admin_page.php');
 }
 
+function createUser()
+{
+    $alertMessage = null;
+    // safe input, avoid space, check if data define else get ''
+    $full_name = trim($_POST['full_name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+    if (empty($email) || empty($password)) {
+        $alertMessage = "Merci de renseigner tous les champs.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $alertMessage = "Format d'email invalide.";
+    } else {
+        createUserInDB($full_name, $email, $passwordHash);
+        redirectToUrl('index.php?action=createTutorial');
+    }
+    require('templates/back/create_user.php');
+}
+
 function createTutorial()
 {
     $alertMessage = null;
