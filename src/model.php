@@ -19,15 +19,6 @@ function isValidTutorial(array $tutorial): bool
     return $isAvailable;
 }
 
-// function getAllTutorials(array $tutorials): array
-// {
-//     $getAll = [];
-//     foreach ($tutorials as $tutorial) {
-//         $getAll[] = $tutorial;
-//     }
-//     return $getAll;
-// }
-
 function getAllTutorials()
 {
     $mysqlClient = dbConnect();
@@ -42,18 +33,6 @@ function getAllTutorials()
     }
     return $allTutorials;
 }
-
-// function getTutorials(array $tutorials): array
-// {
-//     $availableTutorials = [];
-//     foreach ($tutorials as $tutorial) {
-//         if (isValidTutorial($tutorial)) {
-//             $availableTutorials[] = $tutorial;
-//         }
-//     }
-
-//     return $availableTutorials;
-// }
 
 function getTutorials()
 {
@@ -88,15 +67,6 @@ function createTutorialInDB(string $title, string $link, string $author, int $is
     ]);
     return $insertTutorial;
 }
-
-// function getAuthors(string $authorEmail, array $users): string
-// {
-//     foreach ($users as $user) {
-//         if ($authorEmail === $user['email']) {
-//             return $user['full_name'];
-//         }
-//     }
-// }
 
 function getAuthors($authorEmail)
 {
@@ -213,7 +183,4 @@ function dbConnect()
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
     );
     return $mysqlClient;
-    // } catch (Exception $e) {
-    //     die('Erreur : ' . $e->getMessage());
-    // }
 }
