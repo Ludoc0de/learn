@@ -26,6 +26,7 @@
                         <!-- add a condition only for admin acces  -->
                         <?php if (isset($_SESSION["LOGGED_USER"])) { ?>
                         <li><a href="/learn/index.php?action=admin">Accueil admin</a></li>
+                        <li><a href="/learn/index.php?action=createUser">Création utilisateur</a></li>
                         <li><a href="/learn/index.php?action=createTutorial">Creation de tutoriel</a></li>
                         <li><a href="/learn/index.php?action=tutorials">Editer tutoriels</a></li>
                         <li><a href="/learn/index.php?action=logout">Déconnecté</a></li>
