@@ -175,7 +175,6 @@ function deleteTutorialInDB(int $id)
 
 function dbConnect()
 {
-    // try {
     $mysqlClient = new PDO(
         "mysql:host=" . MYSQL_HOST . ";dbname=" . MYSQL_NAME . ";port=" . MYSQL_PORT . ";charset=utf8",
         MYSQL_USER,

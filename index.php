@@ -2,7 +2,6 @@
 session_start();
 require_once('src/controllers/front.php');
 require_once('src/controllers/back.php');
-// require_once('src/controllers/submit_login.php');
 try {
     //code...
     if (isset($_GET['action']) && $_GET['action'] !== "") {
@@ -79,4 +78,3 @@ try {
 } catch (Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
 }
-// f
