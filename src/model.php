@@ -129,13 +129,28 @@ function getUsersFromDB()
     return $users;
 }
 
+
+function createUserInDB($full_name, $email, $password)
+{
+    $mysqlClient = dbConnect();
+    $insertUser = $mysqlClient->prepare(
+        'INSERT INTO users(full_name, email, password)
+    VALUE (:full_name, :email, :password)'
+    );
+    $insertUser->execute([
+        'full_name' => $full_name,
+        'email' => $email,
+        'password' => $password,
+    ]);
+    return $insertUser;
+}
+
 function checkLoginUser($email, $password)
 {
     $users = getUsersFromDB();
     foreach ($users as $user) {
         if (
-            $user['email'] === $email &&
-            $user['password'] === $password
+            $user['email'] === $email && password_verify($password, $user['password'])
         ) {
             $_SESSION["LOGGED_USER"] = [
                 'full_name' => $user['full_name'],
