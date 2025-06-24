@@ -7,14 +7,14 @@
                 <p class="py-6">
                     "Mieux comprendre la cybers sécurité, c'est mieux protéger son identité numérique."
                 </p>
-                <a href="index.php?action=tutorials" class=" btn btn-primary">Éditer les tutos
+                <a href="index.php?action=createTutorial" class=" btn btn-primary">Créer un tutoriel!
 
                 </a>
             </div>
         </div>
         <img src="public/images/arrow.svg" alt="flèche" class="relative top-50 left-32 animate-pulse">
     </div>
-    <div class="flex flex-wrap gap-6 justify-start my-10 lg:flex-row">
+    <!-- <div class="flex flex-wrap gap-6 justify-start my-10 lg:flex-row">
         <?php foreach (
             $availableTutorials as $tutorial
         ) { ?>
@@ -28,7 +28,7 @@
             </div>
         </div>
         <?php } ?>
-    </div>
+    </div> -->
 </div>
 <?php $content = ob_get_clean(); ?>
 <?php require('layout.php') ?>
