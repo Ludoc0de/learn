@@ -14,21 +14,6 @@
         </div>
         <img src="public/images/arrow.svg" alt="flèche" class="relative top-50 left-32 animate-pulse">
     </div>
-    <!-- <div class="flex flex-wrap gap-6 justify-start my-10 lg:flex-row">
-        <?php foreach (
-            $availableTutorials as $tutorial
-        ) { ?>
-        <div class="card w-96 bg-base-200 rounded-sm card-md shadow-sm my-6 lg:my-0">
-            <div class="card-body">
-                <h2 class="card-title"> <?php echo $tutorial['title']; ?></h2>
-                <a> <?php echo $tutorial['link']; ?></a>
-                <div class="justify-end card-actions">
-                    <i>Par <?php echo getAuthors($tutorial['author']); ?></i>
-                </div>
-            </div>
-        </div>
-        <?php } ?>
-    </div> -->
 </div>
 <?php $content = ob_get_clean(); ?>
 <?php require('layout.php') ?>
